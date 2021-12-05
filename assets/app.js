@@ -1,4 +1,4 @@
-// Variables that will target DOM elements
+// Variable that will target DOM elements
 var currentDayEl = document.querySelector("#currentDay");
 const m = moment().format('LLL');
     currentDayEl.textContent = m;
@@ -76,10 +76,10 @@ calendar.forEach(hour => {
     var timeRow = $("<form>")
         .addClass("row");
     
-    // using jquery to grab container and append time row
+    // grab container and append time row
     $(".container").append(timeRow);
 
-    // 
+    // adding hours
     var timeField = $("<div>")
         .addClass("col-md-1 hour")
         .text(hour.displayHour + hour.ampm);
@@ -101,11 +101,12 @@ calendar.forEach(hour => {
 
         hourInput.append(hourData);
 
-        // 
+        // creating save icon 
         var saveIcon = $("<i class='far fa-save fa-lg'></i>")
         var saveEnd = $("<button>")
             .addClass("col-md-1 saveBtn");
 
+        // appending items
         saveEnd.append(saveIcon);
         timeRow.append(timeField, hourInput, saveEnd);
 })
